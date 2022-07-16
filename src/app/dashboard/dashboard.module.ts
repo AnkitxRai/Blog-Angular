@@ -2,16 +2,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
+import { PostComponent } from './post/post.component';
+import { UserResolver } from '../user/user.resolver';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./post/post.module').then(m => m.PostModule),
+    component: DashboardComponent,
+    resolve: {
+      user: UserResolver
+    }
   }
 ];
 
 @NgModule({
-  declarations: [DashboardComponent],
+  declarations: [DashboardComponent, PostComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)
