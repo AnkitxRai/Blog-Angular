@@ -6,7 +6,7 @@
     <p class="card-text">{{post.body}}.</p>
   </div>
   <div class="card-footer text-muted">
-    Post By: <a href="#">  {{user?.name}}</a>
+    Post By: <a routerLink="{{ user?.id }}/posts">  {{user?.name}}</a>
   </div>
 </div>
 <br>

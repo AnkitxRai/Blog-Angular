@@ -1,0 +1,8 @@
+
+<h1>Posts</h1>
+<ng-container *ngFor="let post of posts">
+<section class="articles">
+  <app-post [post]="post" [user]=userOfPost(post)></app-post>
+</section>
+</ng-container>
+
